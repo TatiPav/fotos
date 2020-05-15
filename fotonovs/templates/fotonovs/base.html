@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фотостудия...</title>
+</head>
+<body>
+  <p>
+    <a href="{% url 'fotonovs:index' %}">Домашняя страница</a> -
+    <a href="{% url 'fotonovs:shapes' %}">Предварительная запись</a> -
+  {% if user.is_authenticated %}
+    Привет, {{ user.username }}.
+    <a href="{% url 'users:logout' %}">Выйти из системы</a>
+  {% else %}
+    <a href="{% url 'users:register' %}">Зарегистрироваться</a> -
+    <a href="{% url 'users:login' %}">Авторизоваться</a>
+  {% endif %}
+  </p>
+
+{% block content %}{% endblock content %}
+</body>
+</html>

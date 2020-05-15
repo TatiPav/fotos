@@ -1,0 +1,13 @@
+
+{% extends "fotonovs/base.html" %}
+
+{% block content %}
+  <p>Добавьте дату и время:</p>
+
+  <form action="{% url 'fotonovs:new_shape' %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Добавить дату</button>
+  </form>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "fotonovs/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'fotonovs:shape' shape.id %}">{{ shape }}</a></p>
+    
+  <p>Изменить запись:</p>
+    
+  <form action="{% url 'fotonovs:edit_entry' entry.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Сохранить изменения</button>
+  </form>
+
+{% endblock content %}

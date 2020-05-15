@@ -1,0 +1,26 @@
+{% extends 'fotonovs/base.html' %}
+
+{% block content %}
+
+  <p>Информация о записи: {{ shape }}</p>
+
+  <p>Записи:</p>
+
+  <p>
+    <a href="{% url 'fotonos:new_entry' shape.id %}">Добавить новую запись</a>
+  </p
+  <ul>
+  {% for entry in entries %}
+    <li>
+      <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+      <p>{{ entry.text|linebreaks }}</p>
+      <p>
+        <a href="{% url 'fotonovs:edit_entry' entry.id %}">Изменить  запись</a>
+      </p>
+    </li>
+  {% empty %}
+    <li>ЭТА ДАТА И ВРЕМЯ ДОСТУПНЫ ДЛЯ ЗАПИСИ.</li>
+  {% endfor %}
+  </ul>
+
+{% endblock content %}
