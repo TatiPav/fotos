@@ -67,7 +67,7 @@ def edit_entry(request, entry_id):
     # Возможность редактирования записи
     entry = Entry.objects.get(id=entry_id)
     shape = entry.shape
-    if topic.owner != request.user:
+    if shape.owner != request.user:
         raise Http404
 
     if request.method != 'POST':

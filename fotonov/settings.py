@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fotonovs',
     'users',
+# Third party apps.
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,6 @@ LOGIN_URL = 'users:login'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

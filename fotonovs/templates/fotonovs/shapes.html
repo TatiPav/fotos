@@ -1,17 +1,19 @@
 {% extends "fotonovs/base.html" %}
 
+{% block page_header %}
+  <h1>Даты</h1>
+{% endblock page_header %}
+
 {% block content %}
-
-  <p>Даты</p>
-
   <ul>
     {% for shape in shapes %}
-      <li>
+      <li><h3>
         <a href="{% url 'fotonovs:shape' shape.id %}">{{ shape }}</a>
-      </li>
+      </h3></li>
     {% empty %}
-      <li>Нет свободных дат</li>
+    <li><h3>Нет свободных дат</h3></li>
     {% endfor %}
   </ul>
-  <a href="{% url 'fotonovs:new_shape' %}">Добавить новую дату</a>
+<h3><a href="{% url 'fotonovs:new_shape' %}">Добавить новую дату</a></h3>
+
 {% endblock content %}
