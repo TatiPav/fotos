@@ -7,13 +7,6 @@ app_name = 'fotonovs'
 urlpatterns = [
     # Домашняя страница с выводом всех тем для фото
     path('', views.index, name='index'),
-
-    path('albumn/', views.photon_list, name='list'),
-
-    path('<slug:albumn_slug>/', views.photon_list, name='photon_list_by_albumn'),
-
-    path('<int:id>/<slug:slug>/', views.photon_detail,
-         name='photon_detail'),
     # с выводом всех дат
     path('shapes/', views.shapes, name='shapes'),
     # информация о записи
