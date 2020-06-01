@@ -1,0 +1,1 @@
+web: gunicorn fotonov.wsgi --log-file -

@@ -130,9 +130,19 @@ STATIC_URL = '/static/'
 # Мои настройки
 LOGIN_URL = 'users:login'
 
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
+
+if os.environ.get('DEBUG') == 'TRUE':
+    DEBUG = True
+elif os.environ.get('DEBUG') == 'FALSE':
+    DEBUG = False
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 BOOTSTRAP4 = {
     'include_jquery': True,
 }
+
 
