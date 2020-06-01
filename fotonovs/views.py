@@ -4,27 +4,11 @@ from django.shortcuts import get_object_or_404
 from django.http import Http404
 from .models import Shape, Entry
 from .forms import ShapeForm, EntryForm
-from .models import Albumn, Photon
+
 
 def index(request):
     # Домашняя страница для приложения fotonov
     return render(request, 'fotonovs/index.html')
-
-def photon_list(request, albumn_slug=None):
-    albumn = None
-    albumns = Albumn.objects.all()
-    photons = Photon.objects.filter(available=True)
-    if albumn_slug:
-        albumn = get_object_or_404(Albumn, slug=albumn_slug)
-        photons = photons.filter(albumn=albumn)
-    return render(request, 'fotonovs/list.html', {'albumn': albumn, 'albumns': albumns,
-                                                  'photons': photons})
-
-
-def photon_detail(request, id, slug):
-    photon = get_object_or_404(Photon, id=id, slug=slug, available=True)
-    return render(request, 'fotonovs/detail.html', {'photon': photon})
-
 
 @login_required
 def shapes(request):
