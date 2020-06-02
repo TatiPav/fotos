@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.utils.translation import gettext as _
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
+    # path('foto/', include('foto.urls')),
+    path(_('foto/'), include('foto.urls', namespace='foto')),
     path('', include('fotonovs.urls')),
 ]
 if settings.DEBUG:
