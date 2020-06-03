@@ -3,7 +3,7 @@ import uuid
 import zipfile
 import fotonov.settings
 from datetime import datetime
-from zipfile import ZipFile
+# from zipfile import ZipFile
 
 from django.contrib import admin
 from django.core.files.base import ContentFile

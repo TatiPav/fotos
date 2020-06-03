@@ -1,0 +1,75 @@
+{% extends "fotonovs/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="slider">
+    <ul class="slides">
+        <li>
+            <img src="{% static 'images/00.jpg' %}" alt="Фотогалерея" class="opaque">
+            <div class="caption center-align">
+                <pre>
+
+
+
+      </pre>
+                <h1>
+                    Образец Фотогалереи<br/>
+                    <small class="light text-lighten-3 hide-on-small-only">Создаём фотогалерею</small>
+                </h1>
+                
+            </div>
+        </li>
+        <li>
+            <img src="{% static 'images/00.jpg' %}" alt="Фотогралерея" class="opaque">
+            <div class="caption left-align">
+                <h1>
+                    Разработанный, чтобы быть мобильным<br />
+                    <small class="light text-lighten-3 hide-on-small-only">Оптимизированные изображения
+                        для загрузки на каждое устройство</small>
+                </h1>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="container">
+    <div class="row">
+        {% for album in albums %}
+
+        <div class="col">
+            <div class="card dpg-album-card">
+                <div class="card-image">
+                    <img src="{{ album.thumb.url }}" alt="{{ album.title }}" class="dpg-album-card-image" />
+                </div>
+                <div class="card-content">
+                    <span class="card-title">{{ album.title }}</span>
+                    <p>{{ album.description|truncatechars:120 }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'album' album.slug %}">
+                        Больше Изображений
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+<div class="pagination center">
+    <span class="step-links">
+        {% if albums.has_previous %}
+        <a href="?page={{ albums.previous_page_number }}"
+           class="waves-effect waves-light btn btn-large">Предыдущий</a>
+        {% endif %}
+
+        {% if albums.has_next %}
+        <a href="?page={{ albums.next_page_number }}"
+           class="waves-effect waves-light btn btn-large">Следующий</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}

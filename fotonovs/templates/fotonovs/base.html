@@ -16,6 +16,7 @@
 
 <!--  <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<!--    <nav class="navbar navbar-expand-sm bg-light justify-content-center">-->
     <a class="navbar-brand" href="{% url 'fotonovs:index' %}">Домашняя страница</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -27,6 +28,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'fotonovs:shapes'%}">
               Предварительная запись</a></li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'foto:gallery'%}">
+              Портфолио</a></li>
       </ul>
       <ul class="navbar-nav ml-auto">
         {% if user.is_authenticated %}

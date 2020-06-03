@@ -4,19 +4,26 @@
   <div class="jumbotron">
     <h1 class="display-3">Это сайт Фотостудии ....</h1>
   <div>
-  <img src="/media/images/siren.png" width="510" height="620"/
+  <img src="/media/images/siren.png" width="510" height="620"/ class= "rounded mx-auto d-block" alt= " ">
   </div>
       <pre>
 
-       =======================================================================================================
+
+       * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
       </pre>
 <p class="lead">Для того, чтобы оставить заявку на фотосъёмку необходимо зарегистрироваться. После этого войти и
 создать тему, чтобы оставить сообщение </p>
 
 
-    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+    <a class="btn btn-primary" href="{% url 'users:register' %}"
         role="button">Зарегистрироваться &raquo;</a>
   </div>
-
+<div class="footer-copyright">
+            <div class="container">
+                © 2020 Авторские права
+                <a class="grey-text text-lighten-4 right" href="#!">Образец, созданный @TatiPav</a>
+            </div>
+        </div>
+    </footer>
 {% endblock page_header %}

@@ -1,6 +1,12 @@
 {% extends "fotonovs/base.html" %}
 
 {% block page_header %}
+<pre>
+
+
+
+      </pre>
+
   <h1>Даты</h1>
 {% endblock page_header %}
 
@@ -14,6 +20,27 @@
     <li><h3>Нет свободных дат</h3></li>
     {% endfor %}
   </ul>
-<h3><a href="{% url 'fotonovs:new_shape' %}">Добавить новую дату</a></h3>
+<!--<h3><a href="{% url 'fotonovs:new_shape' %}">Добавить новую дату</a></h3>-->
+<h3><a class="btn btn-outline-info" href="{% url 'fotonovs:new_shape' %}"
+       role="button">Добавить новую дату</a></h3>
 
+<div class="container">
+  <h2>Группы фотографий</h2>
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Список
+    </button>
+    <div class="dropdown-menu">
+      <h5 class="dropdown-header">Индивидуальные</h5>
+      <a class="dropdown-item" href="#">Семья</a>
+      <a class="dropdown-item" href="#">Портреты</a>
+      <a class="dropdown-item" href="#">Свадьба</a>
+      <a class="dropdown-item" href="#">Крещение</a>
+      <a class="dropdown-item" href="#"Дети</a>
+      <h5 class="dropdown-header">Мероприятия</h5>
+      <a class="dropdown-item" href="#">Выпускные и прочее</a>
+      <a class="dropdown-item" href="#">Фуд съёмка</a>
+    </div>
+  </div>
+</div>
 {% endblock content %}
