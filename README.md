@@ -10,12 +10,21 @@
 
 
 python -m venv venv
+
 source venv/bin/activate
+
 pip install --upgrade pip
+
 pip install Django
+
 pip install django-bootstrap4
+
 pip install django-imagekit
+
 python -m pip install Pillow
+
 python manage.py migrate
+
 python manage.py createsuperuser
+
 python manage.py runserver
